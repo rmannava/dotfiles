@@ -1,5 +1,5 @@
 /*
-/*/
+/*/*
 
 !.gitignore
 
@@ -7,17 +7,20 @@
 
 !.vimrc
 
+!.tmux.conf
+
+!.conkyrc
+
+!.Xresources
+
+!.config
 !.config/compton
 !.config/dunst/
 !.config/i3/
 !.config/polybar/
 
-!.tmux.conf
-
-!.conkyrc
-
+!.ssh
 !.ssh/config
 
-!.Xresources
-
-!.urxvt/
+!.urxvt
+!.urxvt/ext/
