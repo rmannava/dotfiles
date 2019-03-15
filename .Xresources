@@ -1,0 +1,51 @@
+URxvt.scrollBar: false
+URxvt.background: #242424
+URxvt.foreground: #DDDDDD
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Shift-V: eval:paste_clipboard
+
+URxvt.pointerBlank: true
+
+URxvt.perl-ext-common: default,matcher,resize-font,keyboard-select
+
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=13
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+URxvt.keysym.M-Return: perl:keyboard-select:activate
+URxvt.keyboard-select.clipboard: true
+
+!! URxvt.cursorColor: #aaaaaa
+URxvt.cursorBlink: true
+
+!!red dark/light
+URxvt.color1: #AA3333
+URxvt.color9: #DD3333
+
+!! green dark/light
+URxvt.color2: #33AA33
+URxvt.color10: #33CC33
+
+!! yellow dark/light
+URxvt.color3: #CCBB44
+URxvt.color11: #EEDD44
+
+!! blue dark/light
+URxvt.color4: #6666DD
+URxvt.color12: #8888DD
+
+!! magenta dark/light
+URxvt.color5: #75507B
+URxvt.color13: #AD7FA8
+
+!! cyan dark/light
+URxvt.color6: #06989A
+URxvt.color14: #34E2E2
+
+!! white dark/light
+URxvt.color7: #D3D7CF
+URxvt.color15: #EEEEEC
