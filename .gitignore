@@ -1,16 +1,16 @@
-*
+/*
+/*/
 
 !.gitignore
 
 !.bashrc
 
-!.vim/*
 !.vimrc
 
-!.config/compton/*
-!.config/dunst/*
-!.config/i3/*
-!.config/polybar/*
+!.config/compton
+!.config/dunst/
+!.config/i3/
+!.config/polybar/
 
 !.tmux.conf
 
@@ -20,4 +20,4 @@
 
 !.Xresources
 
-!.urxvt
+!.urxvt/
