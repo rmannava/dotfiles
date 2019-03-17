@@ -1,0 +1,15 @@
+#!/bin/bash
+# start/stop the autoclicker
+
+REPEAT=6000
+# ms
+DELAY=10
+# 1 for left mouse button
+BUTTON=1
+
+pkill xdotool
+
+if [[ "$1" = "start" ]]
+then
+    xdotool click --repeat $REPEAT --delay $DELAY $BUTTON &
+fi

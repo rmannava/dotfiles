@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo $(date) >> /home/rama/.config/dunst/log
-messer --command='message "Neehath Malisetty" 😡' && echo "message sent" >> /home/rama/.config/dunst/log
+echo $(date) >> $HOME/.config/dunst/log
+messer --command='message "Neehath Malisetty" 😡' && echo "message sent" >> $HOME/.config/dunst/log
 
 rm api.debug.log messen.debug.log

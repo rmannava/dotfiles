@@ -154,7 +154,7 @@ bar-used-empty-foreground = #444444
 [module/spotify]
 type = custom/script
 interval = 1
-exec = python /home/rama/.config/polybar/spotify.py -t 50 -f '   {play_pause} {song} - {artist}' -p ','
+exec = python $HOME/.config/polybar/spotify.py -t 50 -f '   {play_pause} {song} - {artist}' -p ','
 
 ; [module/mpd]
 ; type = internal/mpd

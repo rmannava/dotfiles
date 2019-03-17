@@ -152,14 +152,14 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # bar {
-        # status_command       python3 /home/rama/.config/i3pystatus/config2
+        # status_command       python3 $HOME/.config/i3pystatus/config2
         # position             top
         # workspace_buttons    no
         # font pango:Noto Sans:style=Regular, FontAwesome 10
 # }
 
 # polybar
-exec_always --no-startup-id /home/rama/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Volume
 bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
@@ -181,11 +181,11 @@ exec xset b off
 # Shutdown actions
 mode "shutdown" {
 
-    bindsym l exec --no-startup-id /home/rama/.config/i3/exit lock, mode "default"
-    bindsym e exec --no-startup-id /home/rama/.config/i3/exit logout, mode "default"
-    bindsym s exec --no-startup-id /home/rama/.config/i3/exit suspend, mode "default"
-    bindsym r exec --no-startup-id /home/rama/.config/i3/exit reboot, mode "default"
-    bindsym p exec --no-startup-id /home/rama/.config/i3/exit poweroff, mode "default"
+    bindsym l exec --no-startup-id $HOME/.config/i3/exit lock, mode "default"
+    bindsym e exec --no-startup-id $HOME/.config/i3/exit logout, mode "default"
+    bindsym s exec --no-startup-id $HOME/.config/i3/exit suspend, mode "default"
+    bindsym r exec --no-startup-id $HOME/.config/i3/exit reboot, mode "default"
+    bindsym p exec --no-startup-id $HOME/.config/i3/exit poweroff, mode "default"
 
     # exit shutdown mode
     bindsym Return mode "default"
@@ -198,21 +198,21 @@ bindsym $mod+i mode "shutdown"
 exec --no-startup-id conky
 
 # Autolock screen
-exec --no-startup-id /home/rama/.config/i3/autolock
+exec --no-startup-id $HOME/.config/i3/autolock
 
 # Screenshots
-bindsym --release Print exec scrot /home/rama/Pictures/Screenshot%F_%T.png
-bindsym --release Shift+Print exec scrot -s /home/rama/Pictures/Screenshot%F_%T.png
+bindsym --release Print exec scrot $HOME/Pictures/Screenshot%F_%T.png
+bindsym --release Shift+Print exec scrot -s $HOME/Pictures/Screenshot%F_%T.png
 bindsym --release Ctrl+Shift+Print exec scrot -s "/tmp/Screenshot%F_%T.png" -e "xclip -selection clipboard -target image/png -i /tmp/Screenshot%F_%T.png && rm /tmp/Screenshot%F_%T.png"
 
 #yes Dunst for notifications
-exec --no-startup-id dunst -config /home/rama/.config/dunst/dunstrc &
+exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc &
 
 # Compton for compositing
-exec --no-startup-id compton --config /home/rama/.config/compton/compton.conf -b
+exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -b
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale /home/rama/Pictures/wallpaper.jpg
+exec --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper.jpg
 
 # Syncthing
 exec --no-startup-id syncthing &
@@ -231,3 +231,7 @@ client.focused_inactive #3f3f3f #2f2f2f #ffffff #2e9ef4 #2f2f2f
 
 # urxvt daemon
 exec --no-startup-id urxvtd -q -f -o
+
+# autoclicker mappings
+bindsym $mod+o exec --no-startup-id $HOME/.config/i3/autoclicker start
+bindsym $mod+p exec --no-startup-id $HOME/.config/i3/autoclicker stop

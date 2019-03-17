@@ -1,4 +1,4 @@
 #!/bin/bash
 # start the autolocker
 
-xautolock -time 10 -locker /home/rama/.config/i3/lockscreen &
+xautolock -time 10 -locker $HOME/.config/i3/lockscreen &
