@@ -1,6 +1,18 @@
 #!/bin/bash
 
-echo $(date) >> $HOME/.config/dunst/log
-messer --command='message "Neehath Malisetty" 😡' && echo "message sent" >> $HOME/.config/dunst/log
+function log {
+    echo "$1" >> $HOME/.config/dunst/log
+}
 
-rm api.debug.log messen.debug.log
+log "$(date)"
+log "sending message"
+ERROR="$(messer --command='message "Neehath Malisetty" 😡' 2>&1)"
+if [[ $? = 0 ]]
+then
+    log "message sent"
+else
+    log "message failure $? ($ERROR)"
+fi
+
+rm api.debug.log messen.debug.log > /dev/null 2>&1
+log "exiting"
