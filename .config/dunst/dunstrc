@@ -215,7 +215,7 @@
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
     # doesn't work in i3
-    corner_radius = 5
+    corner_radius = 0
 
     ### Legacy
 
