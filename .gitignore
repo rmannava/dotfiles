@@ -22,6 +22,3 @@
 
 !.ssh
 !.ssh/config
-
-!.urxvt
-!.urxvt/ext/
