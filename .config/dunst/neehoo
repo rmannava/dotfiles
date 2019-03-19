@@ -1,6 +1,10 @@
 #!/bin/bash
+# send neehoo an angry face after a random delay between min and max inclusive
 
-DELAY="60"
+MIN_DELAY=60
+MAX_DELAY=300
+RANGE=$(( $MAX_DELAY - $MIN_DELAY ))
+DELAY=$(( ($RANDOM % ($RANGE+1)) + $MIN_DELAY ))
 MESSENGER="$HOME/.npm-global/bin/messer"
 
 sleep $DELAY; $MESSENGER --command='message "Neehath Malisetty" 😡'
