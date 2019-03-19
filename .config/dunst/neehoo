@@ -1,7 +1,8 @@
 #!/bin/bash
 
+DELAY="60"
 MESSENGER="$HOME/.npm-global/bin/messer"
 
-$MESSENGER --command='message "Neehath Malisetty" 😡'
+sleep $DELAY; $MESSENGER --command='message "Neehath Malisetty" 😡'
 
 rm api.debug.log messen.debug.log
