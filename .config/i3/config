@@ -176,7 +176,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Turn off horrid console beeping
-exec xset b off
+exec_always xset b off
 
 # Shutdown actions
 mode "shutdown" {
@@ -201,11 +201,14 @@ exec --no-startup-id conky
 exec --no-startup-id $HOME/.config/i3/autolock
 
 # Screenshots
-bindsym --release Print exec scrot $HOME/Pictures/Screenshot%F_%T.png
-bindsym --release Shift+Print exec scrot -s $HOME/Pictures/Screenshot%F_%T.png
-bindsym --release Ctrl+Shift+Print exec scrot -s "/tmp/Screenshot%F_%T.png" -e "xclip -selection clipboard -target image/png -i /tmp/Screenshot%F_%T.png && rm /tmp/Screenshot%F_%T.png"
+bindsym --release Print exec gnome-screenshot
+bindsym --release Shift+Print exec gnome-screenshot -a
+bindsym --release Ctrl+Shift+Print exec gnome-screenshot -a -c
 
-#yes Dunst for notifications
+# need this to preserve clipboard for screenshots
+exec --no-startup-id gnome-settings-daemon &
+
+# Dunst for notifications
 exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc &
 
 # Compton for compositing
