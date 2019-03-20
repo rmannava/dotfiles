@@ -60,6 +60,8 @@ Plug 'sjl/gundo.vim'
 Plug 'w0rp/ale'
 " statusline
 Plug 'vim-airline/vim-airline'
+" change surroundings
+Plug 'tpope/vim-surround'
 call plug#end()
 " youcompleteme color fix
 highlight Pmenu guifg=#ffffaf guibg=#000000
