@@ -238,3 +238,7 @@ exec --no-startup-id urxvtd -q -f -o
 # autoclicker mappings
 bindsym $mod+o exec --no-startup-id $HOME/.config/i3/autoclicker start
 bindsym $mod+p exec --no-startup-id $HOME/.config/i3/autoclicker stop
+
+# pause/unpause dunst
+bindsym $mod+y exec pkill -SIGUSR1 dunst
+bindsym $mod+u exec pkill -SIGUSR2 dunst
