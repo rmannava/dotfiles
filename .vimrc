@@ -100,3 +100,5 @@ let g:vimtex_quickfix_mode = 0
 " let g:ale_lint_on_text_changed = 0
 " let g:ale_lint_on_enter = 0
 " let g:ale_lint_on_save = 1
+" add commenting for matlab
+autocmd FileType matlab setlocal commentstring=%\ %s
