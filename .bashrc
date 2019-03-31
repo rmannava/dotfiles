@@ -126,3 +126,14 @@ eval $(thefuck --alias)
 
 # easier cd
 . ~/tools/z/z.sh
+
+# readline variables
+# no bells
+bind 'set bell-style none'
+# flash matching parenthesis
+bind 'set blink-matching-paren On'
+# ignore case
+bind 'set completion-ignore-case On'
+# only use one tab to show suggestions
+bind 'set show-all-if-ambiguous On'
+
