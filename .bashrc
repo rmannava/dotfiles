@@ -120,3 +120,9 @@ export PATH=/home/rama/.npm-global/bin:$PATH
 # fonts
 xset +fp /usr/local/share/fonts
 xset fp rehash
+
+# typo correction
+eval $(thefuck --alias)
+
+# easier cd
+. ~/tools/z/z.sh
