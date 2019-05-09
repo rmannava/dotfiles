@@ -242,3 +242,10 @@ bindsym $mod+p exec --no-startup-id $HOME/.config/i3/autoclicker stop
 # pause/unpause dunst
 bindsym $mod+y exec pkill -SIGUSR1 dunst
 bindsym $mod+u exec pkill -SIGUSR2 dunst
+
+# enable/disable touchscreen
+bindsym $mod+m exec xinput --enable 13
+bindsym $mod+n exec xinput --disable 13
+
+# disable touchscreen by default
+exec_always xinput --disable 13
