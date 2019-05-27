@@ -244,8 +244,8 @@ bindsym $mod+y exec pkill -SIGUSR1 dunst
 bindsym $mod+u exec pkill -SIGUSR2 dunst
 
 # enable/disable touchscreen
-bindsym $mod+m exec xinput --enable 13
-bindsym $mod+n exec xinput --disable 13
+bindsym $mod+m exec xinput --enable ELAN2097:00\ 04F3:2505
+bindsym $mod+n exec xinput --disable ELAN2097:00\ 04F3:2505
 
 # disable touchscreen by default
-exec_always xinput --disable 13
+exec_always xinput --disable ELAN2097:00\ 04F3:2505
