@@ -96,7 +96,7 @@ Disk IO:
 $diskiograph
 $hr
 Network:
-${wireless_essid wlp1s0} - ${execi 1800 ip addr show wlp1s0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1}
+${wireless_essid wlp1s0} - ${execi 1800 curl https://ipinfo.io/ip}
 Link Quality: ${wireless_link_qual_perc wlp1s0}% ${wireless_link_bar wlp1s0}
 Download
 ${downspeedgraph wlp1s0 40}
