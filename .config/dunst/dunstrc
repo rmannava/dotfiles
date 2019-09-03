@@ -400,8 +400,8 @@
 #    appname = "some_volume_notifiers"
 #    set_stack_tag = "volume"
 #
-[neehoo_reply]
-    summary = "neehoo*"
-    body = "😡"
-    format = ""
-    script = /home/rama/.config/dunst/neehoo
+# [neehoo_reply]
+#     summary = "neehoo*"
+#     body = "😡"
+#     format = ""
+#     script = /home/rama/.config/dunst/neehoo
