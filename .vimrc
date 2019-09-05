@@ -57,7 +57,7 @@ Plug 'junegunn/goyo.vim'
 " undo tree
 Plug 'sjl/gundo.vim'
 " syntax checker
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 " statusline
 Plug 'vim-airline/vim-airline'
 " change surroundings
