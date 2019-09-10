@@ -13,7 +13,8 @@ killall -SIGUSR1 dunst
 (sleep 60; pgrep -x i3lock && xset dpms force off) &
 
 # lock, don't fork
-i3lock -i $HOME/Pictures/lockscreen.png -o '#ffffff' -w 'aa0000' -l '#ffffff' -e -n
+# i3lock -i $HOME/Pictures/lockscreen.png -o '#ffffff' -w 'aa0000' -l '#ffffff' -e -n
+i3lock -c '#000000' -l '#ffffff' -e -n
 
 # reenable notifications
 killall -SIGUSR2 dunst
