@@ -215,8 +215,8 @@ exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc &
 # Compton for compositing
 exec --no-startup-id compton --config $HOME/.config/compton/compton.conf -b
 
-# Wallpaper
-exec --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper.jpg
+# Background
+exec --no-startup-id hsetroot -solid '#202020'
 
 # Syncthing
 exec --no-startup-id syncthing &
