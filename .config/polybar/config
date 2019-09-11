@@ -58,10 +58,10 @@ bar-width = 10
 bar-indicator = |
 bar-indicator-font = 3
 bar-indicator-foreground = #ff
-bar-fill = ─
+bar-fill = -
 bar-fill-font = 3
 bar-fill-foreground = #c9665e
-bar-empty = ─
+bar-empty = -
 bar-empty-font = 3
 bar-empty-foreground = #44
 
@@ -145,9 +145,9 @@ bar-used-foreground-3 = #ff5555
 bar-used-indicator = |
 bar-used-indicator-font = 6
 bar-used-indicator-foreground = #ff
-bar-used-fill = ─
+bar-used-fill = -
 bar-used-fill-font = 6
-bar-used-empty = ─
+bar-used-empty = -
 bar-used-empty-font = 6
 bar-used-empty-foreground = #444444
 
