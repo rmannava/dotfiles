@@ -118,7 +118,7 @@ export PATH=/home/rama/utils:$PATH
 export PATH=/home/rama/.npm-global/bin:$PATH
 
 # fonts
-xset +fp /usr/local/share/fonts
+xset +fp /home/rama/.local/share/fonts
 xset fp rehash
 
 # typo correction
