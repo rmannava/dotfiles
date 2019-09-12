@@ -96,6 +96,8 @@ set timeout ttimeoutlen=50
 let g:airline#extensions#whitespace#enabled = 0
 " disable vimtex quickfix window
 let g:vimtex_quickfix_mode = 0
+" set vimtex default pdf viewer
+let g:vimtex_view_general_viewer = "evince"
 " " ale lint on save
 " let g:ale_lint_on_text_changed = 0
 " let g:ale_lint_on_enter = 0
