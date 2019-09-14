@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# lock
+swaylock -f -e -c 000000
+
+# turn off screen if still locked
+swayidle -w \
+    timeout 5 'if pgrep swaylock; then swaymsg "output * dpms off"; else pkill -nx swayidle; fi' \
+    resume 'swaymsg "output * dpms on"; if ! pgrep swaylock ; then pkill -nx swayidle; fi'

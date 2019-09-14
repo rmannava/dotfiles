@@ -1,0 +1,21 @@
+#!/bin/bash
+# shutdown options for sway
+
+case "$1" in
+    lock)
+        $HOME/.config/sway/lockscreen
+        ;;
+    logout)
+        swaymsg exit
+        ;;
+    suspend)
+        $HOME/.config/sway/lockscreen && systemctl suspend
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    poweroff)
+        systemctl poweroff
+        ;;
+esac
+

@@ -19,6 +19,8 @@
 !.config/dunst/
 !.config/i3/
 !.config/polybar/
+!.config/sway
+!.config/dunst
 
 !.ssh
 !.ssh/config
