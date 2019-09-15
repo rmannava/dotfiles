@@ -20,7 +20,7 @@
 !.config/i3/
 !.config/polybar/
 !.config/sway
-!.config/dunst
+!.config/mako
 
 !.ssh
 !.ssh/config

@@ -1,0 +1,6 @@
+font=Monospace 8
+background-color=#444444
+border-size=0
+
+[app-name="Spotify"]
+invisible=1
