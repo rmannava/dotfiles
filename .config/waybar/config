@@ -1,0 +1,100 @@
+[{
+    "layer": "top", // Waybar at top layer
+    "position": "top",
+    "height": 30, // Waybar height (to be removed for auto height)
+    // Choose the order of the modules
+    "modules-left": ["custom/spotify"],
+    "modules-center": ["clock#date"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "backlight", "network", "battery", "clock#time"],
+    // Modules configuration
+    "custom/spotify": {
+        "format": "{}",
+        "exec": "python $HOME/.config/waybar/scripts/spotify.py -t 50 -f '   {play_pause}   {song} - {artist}' -p '\uf04c,\uf04b'",
+        "exec-if": "pgrep spotify",
+        "on-click": "$HOME/.config/waybar/scripts/toggle-play",
+        "interval": 1,
+        "tooltip": false
+    },
+    "clock#date": {
+        "tooltip": false,
+        "format": "{:%A, %B %e, %Y}"
+    },
+    "idle_inhibitor": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "pulseaudio": {
+        "tooltip": false,
+        "format": "{volume}% {icon}",
+        "format-muted": "<span color=\"#aaaaaa\">muted </span>",
+        "format-icons": {
+            "default": ["", "", ""]
+        }
+    },
+    "backlight": {
+        "tooltip": false,
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "network": {
+        "tooltip": false,
+        "format-wifi": "{essid} - {ipaddr}  ",
+        "format-disconnected": "Disconnected  ",
+        "interval": 1
+    },
+    "battery": {
+        "states": {
+            "warning": 25,
+            "critical": 15
+        },
+        "tooltip": false,
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% \uf1e6",
+        "format-plugged": "{capacity}% \uf1e6",
+        "format-full": "{capacity}% \uf240",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+        "bat": "BAT0"
+    },
+    "clock#time": {
+        "tooltip": false,
+        "interval": 1,
+        "format": "{:%H:%M:%S}"
+    }
+}, {
+    "layer": "top", // Waybar at top layer
+    "position": "bottom",
+    "height": 30, // Waybar height (to be removed for auto height)
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-right": ["cpu", "memory"],
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}"
+    },
+    "sway/mode": {
+        "format": "<span color=\"#ff2222\" weight=\"bold\">{}</span>",
+        "tooltip": false
+    },
+    "cpu": {
+        "states": {
+            "medium": 50,
+            "high": 90
+        },
+        "interval": 1,
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "states": {
+            "medium": 50,
+            "high": 90
+        },
+        "interval": 1,
+        "format": "{percentage}% ",
+        "tooltip": false
+    }
+}]

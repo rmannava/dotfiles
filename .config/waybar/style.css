@@ -1,0 +1,108 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "FontAwesome", "NotoSans-Regular", "unifont", "MaterialIcons";
+    font-size: 11px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(43, 48, 59, 0.3);
+    border-bottom: 3px solid transparent;
+    color: white;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    margin: 0 3px;
+    color: white;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    background: rgba(100, 114, 125, 0.2);
+    border-bottom: 3px solid @color15;
+}
+
+#mode {
+    background: transparent;
+    padding-left: 5px;
+}
+
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #temperature, #backlight, #idle_inhibitor, #custom-sl, #custom-spotify {
+    padding: 0 6px;
+    margin: 0 5px;
+}
+
+#clock {
+    background-color: transparent;
+    color: white;
+}
+
+#battery {
+    color: white;
+}
+
+#battery.charging {
+    color: white;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(1, 1, 1, 0);
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: #f5a742;
+}
+
+#battery.critical:not(.charging) {
+    color: crimson;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    background: transparent;
+    color: white;
+}
+
+#cpu.medium {
+    color: #f5a742;
+}
+
+#cpu.high {
+    color: crimson;
+}
+
+#memory {
+    background: transparent;
+    color: white;
+}
+
+#memory.medium {
+    color: #f5a742;
+}
+
+#memory.high {
+    color: crimson;
+}
+
+#network {
+    background: transparent;
+    color: white
+}
+
+#network.disconnected {
+    background: transparent;
+    color: crimson;
+}
+
+#pulseaudio {
+    background: transparent;
+    color: white;
+}

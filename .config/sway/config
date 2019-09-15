@@ -235,24 +235,8 @@ mode "shutdown" {
 }
 bindsym $mod+i mode "shutdown"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    status_command py3status
-    # position top
-
-    # # When the status_command prints a new line to stdout, swaybar updates.
-    # # The default just shows the current date and time.
-    # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    # colors {
-    #     statusline #ffffff
-    #     background #323232
-    #     inactive_workspace #32323200 #32323200 #5c5c5c
-    # }
-}
+# status bar
+exec_always $HOME/.config/waybar/scripts/launch.sh
 
 # change colors         border  backgr  text    ind     child
 client.focused          #3f3f3f #3f3f3f #ffffff #2e9ef4 #3f3f3f

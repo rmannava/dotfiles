@@ -21,6 +21,7 @@
 !.config/polybar/
 !.config/sway
 !.config/mako
+!.config/waybar
 
 !.ssh
 !.ssh/config
