@@ -76,6 +76,10 @@ window#waybar {
 }
 
 #cpu.high {
+    color: #f55f32;
+}
+
+#cpu.max {
     color: crimson;
 }
 
@@ -89,6 +93,10 @@ window#waybar {
 }
 
 #memory.high {
+    color: #f55f32;
+}
+
+#memory.max {
     color: crimson;
 }
 

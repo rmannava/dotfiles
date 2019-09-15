@@ -82,7 +82,8 @@
     "cpu": {
         "states": {
             "medium": 50,
-            "high": 90
+            "high": 70,
+            "max": 90
         },
         "interval": 1,
         "format": "{usage}% ",
@@ -91,7 +92,8 @@
     "memory": {
         "states": {
             "medium": 50,
-            "high": 90
+            "high": 70,
+            "max": 90
         },
         "interval": 1,
         "format": "{percentage}% ",
