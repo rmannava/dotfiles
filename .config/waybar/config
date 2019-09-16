@@ -53,11 +53,13 @@
         },
         "tooltip": false,
         "format": "{capacity}% {icon}",
+        "format-alt": "{capacity}% - {time} {icon}",
         "format-charging": "{capacity}% \uf1e6",
         "format-plugged": "{capacity}% \uf1e6",
         "format-full": "{capacity}% \uf240",
         "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
-        "bat": "BAT0"
+        "bat": "BAT0",
+        "interval": 1
     },
     "clock#time": {
         "tooltip": false,
