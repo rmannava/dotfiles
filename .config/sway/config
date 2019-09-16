@@ -103,11 +103,11 @@ exec_always mako
 	bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
     # enable/disable touchscreen
-    bindsym $mod+m exec swaymsg input 1267:9477:ELAN2097:00_04F3:2505 events enabled
-    bindsym $mod+n exec swaymsg input 1267:9477:ELAN2097:00_04F3:2505 events disabled
+    bindsym $mod+m exec sway input 1267:9477:ELAN2097:00_04F3:2505 events enabled
+    bindsym $mod+n exec sway input 1267:9477:ELAN2097:00_04F3:2505 events disabled
 
     # disable touchscreen on startup
-    exec_always swaymsg input 1267:9477:ELAN2097:00_04F3:2505 events disabled
+    exec_always sway input 1267:9477:ELAN2097:00_04F3:2505 events disabled
 
 
 #
