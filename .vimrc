@@ -31,6 +31,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
+set ignorecase
 set smartcase
 " reasonable size for this dpi
 set guifont=Consolas:h10
