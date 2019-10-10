@@ -24,8 +24,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/local/share/backgrounds/sway/)
-# output * bg #222222 solid_color
-output * bg ~/Pictures/proud.png fit
+output * bg #222222 solid_color
 #
 # Example configuration:
 #
