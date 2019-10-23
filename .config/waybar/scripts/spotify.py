@@ -119,7 +119,7 @@ try:
             artist = label_with_font.format(font=font, label=artist)
             song = label_with_font.format(font=font, label=song)
 
-        artist = artist.replace("&", "amp;")
+        artist = artist.replace("&", "&amp;")
         song = song.replace("&", "&amp;")
         print(output.format(artist=artist, song=song, play_pause=play_pause))
 
