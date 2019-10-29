@@ -54,7 +54,7 @@ input "1739:32402:DELL07EC:00_06CB:7E92_Touchpad" {
 }
 
 # start mako for dbus notifications
-exec_always mako
+exec mako
 
 ### Key bindings
 #
