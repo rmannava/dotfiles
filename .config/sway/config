@@ -109,6 +109,9 @@ exec mako
     # disable touchscreen on startup
     exec_always sway input 1267:9477:ELAN2097:00_04F3:2505 events disabled
 
+    # steal ctrl-q from firefox so it stops quitting
+    bindsym Ctrl+q ;
+
 
 #
 # Moving around:
