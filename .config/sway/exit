@@ -9,7 +9,7 @@ case "$1" in
         swaymsg exit
         ;;
     suspend)
-        $HOME/.config/sway/lockscreen && systemctl suspend
+        systemctl suspend
         ;;
     reboot)
         systemctl reboot

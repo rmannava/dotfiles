@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # lock
-swaylock -f -e -c 000000
+swaylock -f -F -e -c 000000
 
 # turn off screen if still locked
 swayidle -w \
