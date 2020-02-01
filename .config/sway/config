@@ -18,8 +18,7 @@ exec xrdb -merge ~/.Xresources
 # Your preferred terminal emulator
 set $term urxvt
 # Your preferred application launcher
-# Note: it's recommended that you pass the final command to sway
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu j4-dmenu-desktop --dmenu="bemenu-run -i -n" --term="urxvt"
 
 ### Output configuration
 #
