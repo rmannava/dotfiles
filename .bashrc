@@ -116,6 +116,8 @@ fi
 # PATH modifications
 export PATH=/home/rama/utils:$PATH
 export PATH=/home/rama/.npm-global/bin:$PATH
+export PATH=/home/rama/.cargo/bin:$PATH
+export PATH=/home/rama/.local/bin:$PATH
 
 # fonts
 xset +fp /home/rama/.local/share/fonts
