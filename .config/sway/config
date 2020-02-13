@@ -56,6 +56,14 @@ input "1739:32402:DELL07EC:00_06CB:7E92_Touchpad" {
     middle_emulation enabled
 }
 
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+    pointer_accel 0.5
+}
+
 # start mako for dbus notifications
 exec mako
 
