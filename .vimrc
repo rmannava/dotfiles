@@ -38,7 +38,7 @@ set guifont=Consolas:h10
 set showmatch
 set cursorline
 set foldlevel=99
-set textwidth=80
+set textwidth=0
 set wildmenu
 set ruler
 " vim-plug
