@@ -41,6 +41,8 @@ set foldlevel=99
 set textwidth=0
 set wildmenu
 set ruler
+" disable preview window on completion
+set completeopt-=preview
 " vim-plug
 call plug#begin('~/.vim/plugged')
 " autocompletion
