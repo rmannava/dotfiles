@@ -24,12 +24,23 @@ set $menu j4-dmenu-desktop --dmenu="bemenu-run -i -n" --term="urxvt"
 #
 # Default wallpaper (more resolutions are available in /usr/local/share/backgrounds/sway/)
 output * bg #222222 solid_color
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+# set up external display above laptop screen
+output DP-1 res 1920x1080 pos 0 0
+output eDP-1 res 1920x1080 pos 0 1080
+
+# all workspaces except 0 prioritize laptop screen
+workspace 0 output DP-1
+workspace 1 output eDP-1
+workspace 2 output eDP-1
+workspace 3 output eDP-1
+workspace 4 output eDP-1
+workspace 5 output eDP-1
+workspace 6 output eDP-1
+workspace 7 output eDP-1
+workspace 8 output eDP-1
+workspace 9 output eDP-1
+workspace 10 output eDP-1
 
 ### Idle configuration
 
