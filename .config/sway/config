@@ -263,8 +263,8 @@ bindsym $mod+i mode "shutdown"
 exec_always $HOME/.config/waybar/scripts/launch.sh
 
 # change colors         border  backgr  text    ind     child
-client.focused          #3f3f3f #3f3f3f #ffffff #2e9ef4 #3f3f3f
-client.focused_inactive #3f3f3f #2f2f2f #ffffff #2e9ef4 #2f2f2f
+client.focused          #3f3f3f #3f3f3f #ffffff #3f3f3f #3f3f3f
+client.focused_inactive #3f3f3f #2f2f2f #ffffff #3f3f3f #2f2f2f
 
 # change font
 font pango: Monospace 8
