@@ -54,9 +54,8 @@ exec swayidle -w \
 # your device after another 5 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-# disable screen timeout when any application is fullscreen
-for_window [class=".*"] inhibit_idle fullscreen
-for_window [app_id=".*"] inhibit_idle fullscreen
+# disable screen timeout when any application is fullscreen and focused
+for_window [class=".*"] [app_id=".*"] [focused="true"] inhibit_idle fullscreen
 
 ### Input configuration
 
