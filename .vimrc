@@ -43,6 +43,8 @@ set wildmenu
 set ruler
 " disable preview window on completion
 set completeopt-=preview
+" allow backspace over autoindent
+set backspace=indent,eol,start
 " vim-plug
 call plug#begin('~/.vim/plugged')
 " autocompletion
@@ -65,6 +67,8 @@ Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 " change surroundings
 Plug 'tpope/vim-surround'
+" pug syntax highlighting
+Plug 'digitaltoad/vim-pug'
 call plug#end()
 " youcompleteme color fix
 highlight Pmenu guifg=#ffffaf guibg=#000000
