@@ -57,6 +57,9 @@ exec swayidle -w \
 # disable screen timeout when any application is fullscreen
 for_window [class=".*"] inhibit_idle fullscreen
 
+# disable title window border
+default_border pixel
+
 ### Input configuration
 
 input "1739:32402:DELL07EC:00_06CB:7E92_Touchpad" {
@@ -73,6 +76,9 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     middle_emulation enabled
     pointer_accel 0.5
 }
+
+# disable touchscreen on startup
+exec_always sway input 1267:9477:ELAN2097:00_04F3:2505 events disabled
 
 # start mako for dbus notifications
 exec mako
@@ -127,11 +133,12 @@ exec mako
     bindsym $mod+m exec sway input 1267:9477:ELAN2097:00_04F3:2505 events enabled
     bindsym $mod+n exec sway input 1267:9477:ELAN2097:00_04F3:2505 events disabled
 
-    # disable touchscreen on startup
-    exec_always sway input 1267:9477:ELAN2097:00_04F3:2505 events disabled
-
     # steal ctrl-q from firefox so it stops quitting
     bindsym Ctrl+q ;
+
+    # enable/disable title window border
+    bindsym $mod+o default_border normal
+    bindsym $mod+p default_border pixel
 
 
 #
