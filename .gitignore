@@ -8,18 +8,17 @@
 
 !.tmux.conf
 
-!.conkyrc
-
 !.Xresources
 
 !.config
 !.config/compton
-!.config/dunst/
-!.config/i3/
-!.config/polybar/
+!.config/dunst
+!.config/i3
+!.config/polybar
 !.config/sway
 !.config/mako
 !.config/waybar
+!.config/conky
 
 !.ssh
 !.ssh/config
