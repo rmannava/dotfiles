@@ -11,7 +11,7 @@ aForeground=0.8
 -- color ranges
 limits = {0.90, 0.70}
 colors = {0xc76762, 0xf9c2a3, 0xbbbbbb}
-swap_limits = {0.50, 0.25}
+swap_limits = {0.75, 0.50}
 swap_colors = {0xc76762, 0xf9c2a3, 0xbbbbbb}
 temp_limits = {0.90, 0.75, 0.60}
 temp_colors = {0xb50b2d, 0xf55f32, 0xf5a742, 0x32a852}
@@ -44,7 +44,7 @@ settings_table = {
  -- "end_angle" is the ending angle of the ring, in degrees, clockwise from top. Value can be either positive or negative, but must be larger than start_angle.
  { -- cpu fan
   name='hwmon', arg='2 fan 1',
-  max=5000,
+  max=5300,
   bg_colour=cBackground, bg_alpha=aBackground,
   fg_colour=cNormal, fg_alpha=aForeground,
   x=cpu_x, y=cpu_y,
