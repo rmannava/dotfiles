@@ -213,8 +213,8 @@ settings_table = {
   limits=swap_limits, colors=swap_colors
  },
  { -- ethernet download
-  name='downspeed', arg='wlp1s0',
-  max=12.5,
+  name='downspeedf', arg='wlp1s0',
+  max=12800,
   bg_colour=cBackground, bg_alpha=aBackground,
   fg_colour=cNormal, fg_alpha=aForeground,
   x=eth_x, y=eth_y,
@@ -223,8 +223,8 @@ settings_table = {
   limits=limits, colors=colors
  },
  { -- ethernet upload
-  name='upspeed', arg='wlp1s0',
-  max=12.5,
+  name='upspeedf', arg='wlp1s0',
+  max=12800,
   bg_colour=cBackground, bg_alpha=aBackground,
   fg_colour=cNormal, fg_alpha=aForeground,
   x=eth_x, y=eth_y,
