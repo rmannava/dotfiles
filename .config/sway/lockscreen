@@ -3,7 +3,7 @@
 # conky for workspace 0 monitor
 conky -q -c ~/.config/conky/conky-screensaver.conf &
 PID_0=$!
-sleep 1
+sleep 0.1
 swaymsg "move container to workspace 0"
 
 # conky for laptop screen
@@ -11,7 +11,7 @@ conky -q -c ~/.config/conky/conky-screensaver.conf &
 PID=$!
 
 # lock
-swaylock -F -e -c 00000000
+swaylock -u -c 00000000
 
 # kill conky
 kill -15 $PID
