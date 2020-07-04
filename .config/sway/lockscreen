@@ -1,9 +1,18 @@
 #!/bin/bash
 
-# lock
-swaylock -f -F -e -c 000000
+# conky for workspace 0 monitor
+conky -q -c ~/.config/conky/conky-screensaver.conf &
+PID_0=$!
+sleep 1
+swaymsg "move container to workspace 0"
 
-# turn off screen if still locked
-swayidle -w \
-    timeout 5 'if pgrep swaylock; then swaymsg "output * dpms off"; else pkill -nx swayidle; fi' \
-    resume 'swaymsg "output * dpms on"; if ! pgrep swaylock ; then pkill -nx swayidle; fi'
+# conky for laptop screen
+conky -q -c ~/.config/conky/conky-screensaver.conf &
+PID=$!
+
+# lock
+swaylock -F -e -c 00000000
+
+# kill conky
+kill -15 $PID
+kill -15 $PID_0
