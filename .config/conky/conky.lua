@@ -303,6 +303,41 @@ function conky_init_rings()
   draw_ring(cr,pct,pt)
  end
 
+ local function write_centered(cr, text, x, y, size, weight)
+     size = size or 10
+     weight = weight or CAIRO_FONT_WEIGHT_BOLD
+     cairo_select_font_face(cr, 'DejaVu Sans Mono', CAIRO_FONT_SLANT_NORMAL, weight)
+     cairo_set_font_size(cr, size)
+     x = x - (2/3 * size) * string.len(text) / 2
+     cairo_move_to(cr, x, y)
+     cairo_show_text(cr, text)
+     cairo_stroke(cr)
+ end
+
+ local function write_values(cr)
+     cpu_x = 960
+     cpu_y = 470
+     mem_x = 960
+     mem_y = 620
+     eth_x = 960
+     eth_y = 710
+     eth_width = 80
+
+     write_centered(cr, 'CPU', cpu_x, cpu_y, 25)
+     write_centered(cr, conky_parse('${cpu cpu0}') .. '%', cpu_x, cpu_y + 20, 15)
+     write_centered(cr, conky_parse('${hwmon 2 temp 1}') .. 'C', cpu_x, cpu_y + 40, 15)
+     write_centered(cr, conky_parse('${hwmon 2 fan 1}') .. ' RPM', cpu_x, cpu_y + 60, 15)
+
+     write_centered(cr, 'MEM', mem_x, mem_y, 25)
+     write_centered(cr, conky_parse('${memperc}') .. '%', mem_x, mem_y + 20, 15)
+
+     write_centered(cr, 'DOWN', eth_x - eth_width, eth_y, 20)
+     write_centered(cr, string.format('%.1f', (8 / 1024) * conky_parse('${downspeedf wlp1s0}')) .. ' Mbps', eth_x - eth_width, eth_y + 20, 15)
+
+     write_centered(cr, 'UP', eth_x + eth_width, eth_y, 20)
+     write_centered(cr, string.format('%.1f', (8 / 1024) * conky_parse('${upspeedf wlp1s0}')) .. ' Mbps', eth_x + eth_width, eth_y + 20, 15)
+ end
+
  -- Check that Conky has been running for at least 5s
  if conky_window==nil then return end
 
@@ -317,6 +352,7 @@ function conky_init_rings()
   for i in pairs(settings_table) do
    setup_rings(cr,settings_table[i])
   end
+  write_values(cr)
  end
 
 	cairo_destroy(cr)
