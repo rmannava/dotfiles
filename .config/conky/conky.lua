@@ -323,6 +323,8 @@ function conky_init_rings()
      eth_y = 710
      eth_width = 80
 
+     cairo_set_source_rgba(cr,rgb_to_r_g_b(cNormal,aForeground))
+
      write_centered(cr, 'CPU', cpu_x, cpu_y, 25)
      write_centered(cr, conky_parse('${cpu cpu0}') .. '%', cpu_x, cpu_y + 20, 15)
      write_centered(cr, conky_parse('${hwmon 2 temp 1}') .. 'C', cpu_x, cpu_y + 40, 15)
