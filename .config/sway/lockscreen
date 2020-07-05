@@ -1,18 +1,27 @@
 #!/bin/bash
 
-# conky for workspace 0 monitor
-conky -q -c ~/.config/conky/conky-screensaver.conf &
-PID_0=$!
-sleep 0.1
-swaymsg "move container to workspace 0"
+function start_conky {
+    conky -q -c ~/.config/conky/conky-screensaver-"$1".conf &
+    PIDS+=($!)
+}
+
+function kill_conky {
+    for PID in ${PIDS[@]}; do
+        kill -9 $PID
+    done
+}
+
+# conky pids
+PIDS=()
+
+# conky for monitor
+start_conky "DP-1"
 
 # conky for laptop screen
-conky -q -c ~/.config/conky/conky-screensaver.conf &
-PID=$!
+start_conky "eDP-1"
 
 # lock
 swaylock -u -c 00000000
 
 # kill conky
-kill -15 $PID
-kill -15 $PID_0
+kill_conky

@@ -53,8 +53,12 @@ exec swayidle -w \
 # your device after another 5 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-# start screensaver as fullscreen
-for_window [class="Screensaver"] fullscreen enable
+# move screensaver to correct display
+for_window [class="Screensaver DP-1"] move container to output DP-1
+for_window [class="Screensaver eDP-1"] move container to output eDP-1
+
+# make screensaver fullscreen
+for_window [class="^Screensaver"] fullscreen enable
 
 # disable screen timeout when anything other than screensaver is fullscreen
 for_window [class="^((?!Screensaver).)*$"] inhibit_idle fullscreen
