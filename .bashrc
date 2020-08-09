@@ -138,3 +138,5 @@ bind 'set blink-matching-paren On'
 bind 'set completion-ignore-case On'
 # only use one tab to show suggestions
 bind 'set show-all-if-ambiguous On'
+# allow ctrl+s for forward search
+stty -ixon
