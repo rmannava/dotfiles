@@ -83,6 +83,10 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     pointer_accel 0.5
 }
 
+input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse_Mouse" {
+    scroll_factor 2.5
+}
+
 # disable touchscreen on startup
 exec_always sway input 1267:9477:ELAN2097:00_04F3:2505 events disabled
 
