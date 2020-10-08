@@ -84,7 +84,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 }
 
 input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse_Mouse" {
-    scroll_factor 2.5
+    scroll_factor 1
 }
 
 # disable touchscreen on startup
