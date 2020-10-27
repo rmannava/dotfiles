@@ -143,8 +143,8 @@ exec mako
     bindsym $mod+m exec sway input 1267:9477:ELAN2097:00_04F3:2505 events enabled
     bindsym $mod+n exec sway input 1267:9477:ELAN2097:00_04F3:2505 events disabled
 
-    # steal ctrl-q from firefox so it stops quitting
-    bindsym Ctrl+q ;
+    # steal ctrl+q from firefox so it stops quitting
+    bindsym Ctrl+q exec $HOME/.config/sway/noquit
 
     # enable/disable title window border
     bindsym $mod+o default_border normal

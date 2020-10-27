@@ -1,0 +1,11 @@
+#!/bin/bash
+# sends ctrl+q to the active window if it is not firefox
+
+NAME=$(xdotool getactivewindow getwindowname)
+
+if [[ "$NAME" =~ .*"Mozilla Firefox".* ]]
+then
+    exit
+else
+    xdotool getactivewindow key ctrl+q
+fi
