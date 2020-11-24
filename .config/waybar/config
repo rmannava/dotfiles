@@ -11,7 +11,7 @@
         "format": "{}",
         "exec": "python $HOME/.config/waybar/scripts/spotify.py -t 50 -f '   {play_pause}   {song} - {artist}' -p '\uf04c,\uf04b'",
         "exec-if": "pgrep spotify",
-        "on-click": "$HOME/.config/waybar/scripts/toggle-play",
+        "on-click": "playerctl play-pause",
         "interval": 1,
         "tooltip": false
     },
