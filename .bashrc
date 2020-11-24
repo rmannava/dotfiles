@@ -140,3 +140,6 @@ bind 'set completion-ignore-case On'
 bind 'set show-all-if-ambiguous On'
 # allow ctrl+s for forward search
 stty -ixon
+
+# ignore minor cd spell errors
+shopt -s cdspell
