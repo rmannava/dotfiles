@@ -48,7 +48,7 @@ set backspace=indent,eol,start
 " vim-plug
 call plug#begin('~/.vim/plugged')
 " autocompletion
-Plug 'valloric/youcompleteme'
+Plug 'valloric/youcompleteme', { 'commit': 'd98f896' }
 " file system explorer
 Plug 'scrooloose/nerdtree'
 " vim latex support
