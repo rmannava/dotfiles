@@ -150,6 +150,9 @@ exec mako
     bindsym $mod+o default_border normal
     bindsym $mod+p default_border pixel
 
+    # toggle headphones audio profile
+    bindsym $mod+t exec $HOME/utils/toggle-profile
+
 
 #
 # Moving around:
