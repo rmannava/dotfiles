@@ -18,7 +18,7 @@ temp_colors = {0xb50b2d, 0xf55f32, 0xf5a742, 0x32a852}
 fan_limits = {0.90, 0.70, 0.50}
 fan_colors = {0xb50b2d, 0xf55f32, 0xf5a742, 0x32a852}
 
--- coords
+-- ring coords
 offset_x = 0
 offset_y = 350
 cpu_x = offset_x + 960
@@ -308,13 +308,18 @@ function conky_init_rings()
      weight = weight or CAIRO_FONT_WEIGHT_BOLD
      cairo_select_font_face(cr, 'DejaVu Sans Mono', CAIRO_FONT_SLANT_NORMAL, weight)
      cairo_set_font_size(cr, size)
-     x = x - (2/3 * size) * string.len(text) / 2
-     cairo_move_to(cr, x, y)
-     cairo_show_text(cr, text)
-     cairo_stroke(cr)
+     buffer = 0
+     for line in text:gmatch("[^\n]+") do
+         text_x = x - (2/3 * size) * string.len(line) / 2
+         cairo_move_to(cr, text_x, y + buffer)
+         cairo_show_text(cr, line)
+         cairo_stroke(cr)
+         buffer = buffer + 20
+     end
  end
 
  local function write_values(cr)
+     -- text coords
      cpu_x = 960
      cpu_y = 470
      mem_x = 960
@@ -322,6 +327,8 @@ function conky_init_rings()
      eth_x = 960
      eth_y = 710
      eth_width = 80
+     port_x = 960
+     port_y = 860
 
      cairo_set_source_rgba(cr,rgb_to_r_g_b(cNormal,aForeground))
 
@@ -338,6 +345,10 @@ function conky_init_rings()
 
      write_centered(cr, 'UP', eth_x + eth_width, eth_y, 20)
      write_centered(cr, string.format('%.1f', (8 / 1024) * conky_parse('${upspeedf wlp1s0}')) .. ' Mbps', eth_x + eth_width, eth_y + 20, 15)
+
+     -- stock price
+     write_centered(cr, 'PORTFOLIO', port_x, port_y, 25)
+     write_centered(cr, conky_parse('${execi 10 $HOME/utils/stocks}'), port_x, port_y + 30, 15)
  end
 
  -- Check that Conky has been running for at least 5s
