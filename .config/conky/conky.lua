@@ -348,7 +348,7 @@ function conky_init_rings()
 
      -- stock price
      write_centered(cr, 'PORTFOLIO', port_x, port_y, 25)
-     write_centered(cr, conky_parse('${execi 10 $HOME/utils/stocks}'), port_x, port_y + 30, 15)
+     write_centered(cr, conky_parse('${execi 5 $HOME/utils/stocks}'), port_x, port_y + 30, 15)
  end
 
  -- Check that Conky has been running for at least 5s
