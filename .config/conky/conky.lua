@@ -28,6 +28,11 @@ mem_y = offset_y + 284
 eth_x = offset_x + 960
 eth_y = offset_y + 660
 
+-- max ring values
+max_fan = 5300
+max_downspeed = 300 * (1024 / 8)
+max_upspeed = 300 * (1024 / 8)
+
 -- Rings
 settings_table = {
  -- "name" is the type of stat to display; you can choose from 'cpu', 'memperc', 'fs_used_perc', 'battery_used_perc'.
@@ -44,7 +49,7 @@ settings_table = {
  -- "end_angle" is the ending angle of the ring, in degrees, clockwise from top. Value can be either positive or negative, but must be larger than start_angle.
  { -- cpu fan
   name='hwmon', arg='2 fan 1',
-  max=5300,
+  max=max_fan,
   bg_colour=cBackground, bg_alpha=aBackground,
   fg_colour=cNormal, fg_alpha=aForeground,
   x=cpu_x, y=cpu_y,
@@ -214,7 +219,7 @@ settings_table = {
  },
  { -- ethernet download
   name='downspeedf', arg='wlp1s0',
-  max=12800,
+  max=max_downspeed,
   bg_colour=cBackground, bg_alpha=aBackground,
   fg_colour=cNormal, fg_alpha=aForeground,
   x=eth_x, y=eth_y,
@@ -224,7 +229,7 @@ settings_table = {
  },
  { -- ethernet upload
   name='upspeedf', arg='wlp1s0',
-  max=12800,
+  max=max_upspeed,
   bg_colour=cBackground, bg_alpha=aBackground,
   fg_colour=cNormal, fg_alpha=aForeground,
   x=eth_x, y=eth_y,
