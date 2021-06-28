@@ -1,6 +1,7 @@
 #!/bin/python
 
 import sys
+import html
 import dbus
 import argparse
 
@@ -119,8 +120,8 @@ try:
             artist = label_with_font.format(font=font, label=artist)
             song = label_with_font.format(font=font, label=song)
 
-        artist = artist.replace("&", "&amp;")
-        song = song.replace("&", "&amp;")
+        artist = html.escape(artist)
+        song = html.escape(song)
         print(output.format(artist=artist, song=song, play_pause=play_pause))
 
 except Exception as e:
