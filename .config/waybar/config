@@ -34,7 +34,8 @@
     },
     "network": {
         "tooltip": false,
-        "format-wifi": "{essid} - {ipaddr}  ",
+        "format-wifi": "{essid} - {ipaddr}  \uf1eb",
+        "format-ethernet": "{ifname} - {ipaddr}  \uf1eb",
         "format-disconnected": "Disconnected  ",
         "interval": 1
     },
