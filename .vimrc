@@ -21,6 +21,8 @@ set tabstop=4
 set softtabstop=4
 " indent new line to that of previous line
 set autoindent
+" set autoindent width to 4 spaces
+set shiftwidth=4
 " ignore case in patterns
 set ignorecase
 " ignore case in patterns unless there are capital letters
