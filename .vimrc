@@ -1,17 +1,60 @@
-" change startup directory to something useful
-cd $HOME
-" some editing improvements
+" editor settings
+" syntax highlighting
 syntax on
+" enable plugins for specific filetypes
 filetype plugin on
+" enable indents for specific filetypes
 filetype indent on
+" colorscheme
 colorscheme slate
-" line numbers
+" add line numbers
 set number
+" incremental search
+set incsearch
+" change working directory to the current file
+set autochdir
+" expand tabs to spaces
+set expandtab
+" tabs are 4 spaces
+set tabstop=4
+" expand inserted tabs to 4 spaces
+set softtabstop=4
+" indent new line to that of previous line
+set autoindent
+" ignore case in patterns
+set ignorecase
+" ignore case in patterns unless there are capital letters
+set smartcase
+" show matching bracket briefly
+set showmatch
+" draw line the current line
+set cursorline
+" show command tab completion options
+set wildmenu
+" show line number and column of cursor
+set ruler
+" disable preview window on completion
+set completeopt-=preview
+" allow backspace over autoindent, eol, start
+set backspace=indent,eol,start
+" timeout for leader key
+set timeout ttimeoutlen=50
+
+" key mappings
+" map escape sequences to alt combinations (enables alt keymaps)
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+" edit vimrc
 nnoremap <silent> <Leader>v :edit ~/.vimrc<CR>
 " toggle folds
 nnoremap <silent> <Space> za
 " file system navigation
 nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
+" fold file block
 nnoremap <silent> <Leader>f $V%zf
 " map gundo to something useful
 nnoremap <silent> <Leader>t :GundoToggle<CR>
@@ -20,32 +63,9 @@ nnoremap <silent> <Leader>g :Goyo<CR>
 " jump between ale errors
 nnoremap <silent> <C-j> :ALENext<CR>
 nnoremap <silent> <C-k> :ALEPrevious<CR>
-let g:tex_flavor = "latex"
-" make gundo use python3
-let g:gundo_prefer_python3 = 1
-set incsearch
-set autochdir
-set backspace=eol,start
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set autoindent
-set ignorecase
-set smartcase
-" reasonable size for this dpi
-set guifont=Consolas:h10
-set showmatch
-set cursorline
-set foldlevel=99
-set textwidth=0
-set wildmenu
-set ruler
-" disable preview window on completion
-set completeopt-=preview
-" allow backspace over autoindent
-set backspace=indent,eol,start
-" vim-plug
+
+" plugins
+" use vim-plug to load plugins
 call plug#begin('~/.vim/plugged')
 " autocompletion
 Plug 'valloric/youcompleteme', { 'commit': 'd98f896' }
@@ -67,9 +87,22 @@ Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 " change surroundings
 Plug 'tpope/vim-surround'
-" pug syntax highlighting
-Plug 'digitaltoad/vim-pug'
+" end plugin loading
 call plug#end()
+
+" plugin settings and fixes
+" default *.tex files to latex
+let g:tex_flavor = "latex"
+" make gundo use python3
+let g:gundo_prefer_python3 = 1
+" airline disable whitespace
+let g:airline#extensions#whitespace#enabled = 0
+" disable vimtex quickfix window
+let g:vimtex_quickfix_mode = 0
+" set vimtex default pdf viewer
+let g:vimtex_view_general_viewer = "evince"
+" add commenting for matlab
+autocmd FileType matlab setlocal commentstring=%\ %s
 " youcompleteme color fix
 highlight Pmenu guifg=#ffffaf guibg=#000000
 " vimtex ycm compatibility
@@ -86,28 +119,3 @@ if !exists('g:ycm_semantic_triggers')
         \ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
         \ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
         \ ]
-" map escape sequences to alt combinations (enables alt keymaps)
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
-" timeout for leader key
-set timeout ttimeoutlen=50
-" " ale error list
-" let g:ale_open_list = 1
-" " ale error list height
-" let g:ale_list_window_size = 5
-" airline disable whitespace
-let g:airline#extensions#whitespace#enabled = 0
-" disable vimtex quickfix window
-let g:vimtex_quickfix_mode = 0
-" set vimtex default pdf viewer
-let g:vimtex_view_general_viewer = "evince"
-" " ale lint on save
-" let g:ale_lint_on_text_changed = 0
-" let g:ale_lint_on_enter = 0
-" let g:ale_lint_on_save = 1
-" add commenting for matlab
-autocmd FileType matlab setlocal commentstring=%\ %s
