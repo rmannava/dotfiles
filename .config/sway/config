@@ -26,8 +26,8 @@ set $menu j4-dmenu-desktop --dmenu="bemenu-run -i -n" --term="urxvt"
 output * bg #222222 solid_color
 
 # set up external display above laptop screen
-output DP-1 res 2560x1440 pos 0 0
-output eDP-1 res 1920x1080 pos 2560 0
+output DP-1 res 2560x1440 pos -2560 0
+output eDP-1 res 1920x1080 pos 0 0
 
 # all workspaces except 0 prioritize laptop screen
 workspace 0 output DP-1
