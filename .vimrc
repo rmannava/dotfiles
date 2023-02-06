@@ -41,6 +41,8 @@ set completeopt-=preview
 set backspace=indent,eol,start
 " timeout for leader key
 set timeout ttimeoutlen=50
+" set filetype for config
+au BufNewFile,BufRead config			setf cfg
 
 " key mappings
 " map escape sequences to alt combinations (enables alt keymaps)
