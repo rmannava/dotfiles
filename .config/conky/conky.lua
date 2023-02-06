@@ -352,8 +352,8 @@ function conky_init_rings()
      write_centered(cr, string.format('%.1f', (8 / 1024) * conky_parse('${upspeedf wlp1s0}')) .. ' Mbps', eth_x + eth_width, eth_y + 20, 15)
 
      -- stock price
-     write_centered(cr, 'PORTFOLIO', port_x, port_y, 25)
-     write_centered(cr, conky_parse('${execi 5 $HOME/utils/stocks}'), port_x, port_y + 30, 15)
+     -- write_centered(cr, 'PORTFOLIO', port_x, port_y, 25)
+     -- write_centered(cr, conky_parse('${execi 5 $HOME/utils/stocks}'), port_x, port_y + 30, 15)
  end
 
  -- Check that Conky has been running for at least 5s
