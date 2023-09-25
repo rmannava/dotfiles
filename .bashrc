@@ -115,16 +115,14 @@ fi
 
 # PATH modifications
 export PATH=/home/rama/utils:$PATH
-export PATH=/home/rama/.npm-global/bin:$PATH
-export PATH=/home/rama/.cargo/bin:$PATH
-export PATH=/home/rama/.local/bin:$PATH
+# export PATH=/home/rama/.npm-global/bin:$PATH
+# export PATH=/home/rama/.cargo/bin:$PATH
+# export PATH=/home/rama/.local/bin:$PATH
 
 # fonts
-xset +fp /home/rama/.local/share/fonts
-xset fp rehash
+# xset +fp /home/rama/.local/share/fonts
+# xset fp rehash
 
-# typo correction
-eval $(thefuck --alias)
 
 # easier cd
 . ~/tools/z/z.sh
@@ -138,7 +136,7 @@ bind 'set blink-matching-paren On'
 bind 'set completion-ignore-case On'
 # only use one tab to show suggestions
 bind 'set show-all-if-ambiguous On'
-# allow ctrl+s for forward search
+# allow ctrl-s for forward search
 stty -ixon
 
 # ignore minor cd spell errors
