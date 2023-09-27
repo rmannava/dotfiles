@@ -47,16 +47,30 @@ settings_table = {
  -- "thickness" is the thickness of the ring, centred around the radius.
  -- "start_angle" is the starting angle of the ring, in degrees, clockwise from top. Value can be either positive or negative.
  -- "end_angle" is the ending angle of the ring, in degrees, clockwise from top. Value can be either positive or negative, but must be larger than start_angle.
- { -- cpu fan
-  name='hwmon', arg='2 fan 1',
-  max=max_fan,
-  bg_colour=cBackground, bg_alpha=aBackground,
-  fg_colour=cNormal, fg_alpha=aForeground,
-  x=cpu_x, y=cpu_y,
-  radius=85, thickness=5,
-  start_angle=-140, end_angle=140,
-  limits=fan_limits, colors=fan_colors
- },
+ 
+ -- fan speed
+ -- { -- cpu fan
+ --  name='hwmon', arg='2 fan 1',
+ --  max=max_fan,
+ --  bg_colour=cBackground, bg_alpha=aBackground,
+ --  fg_colour=cNormal, fg_alpha=aForeground,
+ --  x=cpu_x, y=cpu_y,
+ --  radius=85, thickness=5,
+ --  start_angle=-140, end_angle=140,
+ --  limits=fan_limits, colors=fan_colors
+ -- },
+ 
+ -- core 0: cpu0
+ -- core 4: cpu2
+ -- core 8: 
+ -- core 9: 
+ -- core 10: 
+ -- core 11: 
+ -- core 12: 
+ -- core 13: 
+ -- core 14: 
+ -- core 15: 
+ -- cpu usage
  { -- cpu total
   name='cpu', arg='cpu0',
   max=100,
@@ -67,16 +81,6 @@ settings_table = {
   start_angle=-140, end_angle=140,
   limits=limits, colors=colors
  },
- { -- cpu total temp
-  name='hwmon', arg='2 temp 1',
-  max=100,
-  bg_colour=cBackground, bg_alpha=aBackground,
-  fg_colour=cNormal, fg_alpha=aForeground,
-  x=cpu_x, y=cpu_y,
-  radius=115, thickness=5,
-  start_angle=-140, end_angle=140,
-  limits=temp_limits, colors=temp_colors
- },
  { -- cpu 0
   name='cpu', arg='cpu1',
   max=100,
@@ -84,7 +88,37 @@ settings_table = {
   fg_colour=cNormal, fg_alpha=aForeground,
   x=cpu_x, y=cpu_y,
   radius=130, thickness=10,
-  start_angle=-140, end_angle=-106,
+  start_angle=-140, end_angle=-127,
+  limits=limits, colors=colors
+ },
+ { -- cpu 1
+  name='cpu', arg='cpu2',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=130, thickness=10,
+  start_angle=-125, end_angle=-113,
+  limits=limits, colors=colors
+ },
+ { -- cpu 2
+  name='cpu', arg='cpu3',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=130, thickness=10,
+  start_angle=-111, end_angle=-99,
+  limits=limits, colors=colors
+ },
+ { -- cpu 3
+  name='cpu', arg='cpu4',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=130, thickness=10,
+  start_angle=-97, end_angle=-85,
   limits=limits, colors=colors
  },
  { -- cpu 4
@@ -94,27 +128,7 @@ settings_table = {
   fg_colour=cNormal, fg_alpha=aForeground,
   x=cpu_x, y=cpu_y,
   radius=130, thickness=10,
-  start_angle=-104, end_angle=-71,
-  limits=limits, colors=colors
- },
- { -- core 0 temp
-  name='hwmon', arg='3 temp 2',
-  max=100,
-  bg_colour=cBackground, bg_alpha=aBackground,
-  fg_colour=cNormal, fg_alpha=aForeground,
-  x=cpu_x, y=cpu_y,
-  radius=137.5, thickness=5,
-  start_angle=-140, end_angle=-71,
-  limits=temp_limits, colors=temp_colors
- },
- { -- cpu 1
-  name='cpu', arg='cpu2',
-  max=100,
-  bg_colour=cBackground, bg_alpha=aBackground,
-  fg_colour=cNormal, fg_alpha=aForeground,
-  x=cpu_x, y=cpu_y,
-  radius=130, thickness=10,
-  start_angle=-69, end_angle=-36,
+  start_angle=-83, end_angle=-57,
   limits=limits, colors=colors
  },
  { -- cpu 5
@@ -124,27 +138,7 @@ settings_table = {
   fg_colour=cNormal, fg_alpha=aForeground,
   x=cpu_x, y=cpu_y,
   radius=130, thickness=10,
-  start_angle=-34, end_angle=-1,
-  limits=limits, colors=colors
- },
- { -- core 1 temp
-  name='hwmon', arg='3 temp 3',
-  max=100,
-  bg_colour=cBackground, bg_alpha=aBackground,
-  fg_colour=cNormal, fg_alpha=aForeground,
-  x=cpu_x, y=cpu_y,
-  radius=137.5, thickness=5,
-  start_angle=-69, end_angle=-1,
-  limits=temp_limits, colors=temp_colors
- },
- { -- cpu 2
-  name='cpu', arg='cpu3',
-  max=100,
-  bg_colour=cBackground, bg_alpha=aBackground,
-  fg_colour=cNormal, fg_alpha=aForeground,
-  x=cpu_x, y=cpu_y,
-  radius=130, thickness=10,
-  start_angle=1, end_angle=34,
+  start_angle=-55, end_angle=-29,
   limits=limits, colors=colors
  },
  { -- cpu 6
@@ -154,27 +148,7 @@ settings_table = {
   fg_colour=cNormal, fg_alpha=aForeground,
   x=cpu_x, y=cpu_y,
   radius=130, thickness=10,
-  start_angle=36, end_angle=69,
-  limits=limits, colors=colors
- },
- { -- core 2 temp
-  name='hwmon', arg='3 temp 4',
-  max=100,
-  bg_colour=cBackground, bg_alpha=aBackground,
-  fg_colour=cNormal, fg_alpha=aForeground,
-  x=cpu_x, y=cpu_y,
-  radius=137.5, thickness=5,
-  start_angle=1, end_angle=69,
-  limits=temp_limits, colors=temp_colors
- },
- { -- cpu 3
-  name='cpu', arg='cpu4',
-  max=100,
-  bg_colour=cBackground, bg_alpha=aBackground,
-  fg_colour=cNormal, fg_alpha=aForeground,
-  x=cpu_x, y=cpu_y,
-  radius=130, thickness=10,
-  start_angle=71, end_angle=104,
+  start_angle=-27, end_angle=-1,
   limits=limits, colors=colors
  },
  { -- cpu 7
@@ -184,19 +158,163 @@ settings_table = {
   fg_colour=cNormal, fg_alpha=aForeground,
   x=cpu_x, y=cpu_y,
   radius=130, thickness=10,
-  start_angle=106, end_angle=140,
+  start_angle=1, end_angle=27,
   limits=limits, colors=colors
  },
- { -- core 3 temp
-  name='hwmon', arg='3 temp 5',
+ { -- cpu 8
+  name='cpu', arg='cpu9',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=130, thickness=10,
+  start_angle=29, end_angle=55,
+  limits=limits, colors=colors
+ },
+ { -- cpu 9
+  name='cpu', arg='cpu10',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=130, thickness=10,
+  start_angle=57, end_angle=83,
+  limits=limits, colors=colors
+ },
+ { -- cpu 10
+  name='cpu', arg='cpu11',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=130, thickness=10,
+  start_angle=85, end_angle=111,
+  limits=limits, colors=colors
+ },
+ { -- cpu 11
+  name='cpu', arg='cpu12',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=130, thickness=10,
+  start_angle=113, end_angle=140,
+  limits=limits, colors=colors
+ },
+ 
+ -- cpu temp
+ { -- cpu total temp
+  name='hwmon', arg='4 temp 1',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=115, thickness=5,
+  start_angle=-140, end_angle=140,
+  limits=temp_limits, colors=temp_colors
+ },
+ { -- core 0 temp
+  name='hwmon', arg='4 temp 2',
   max=100,
   bg_colour=cBackground, bg_alpha=aBackground,
   fg_colour=cNormal, fg_alpha=aForeground,
   x=cpu_x, y=cpu_y,
   radius=137.5, thickness=5,
-  start_angle=71, end_angle=140,
+  start_angle=-140, end_angle=-113,
   limits=temp_limits, colors=temp_colors
  },
+ { -- core 4 temp
+  name='hwmon', arg='4 temp 3',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=137.5, thickness=5,
+  start_angle=-111, end_angle=-85,
+  limits=temp_limits, colors=temp_colors
+ },
+ { -- core 8 temp
+  name='hwmon', arg='4 temp 4',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=137.5, thickness=5,
+  start_angle=-83, end_angle=-57,
+  limits=temp_limits, colors=temp_colors
+ },
+ { -- core 9 temp
+  name='hwmon', arg='4 temp 5',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=137.5, thickness=5,
+  start_angle=-55, end_angle=-29,
+  limits=temp_limits, colors=temp_colors
+ },
+ { -- core 10 temp
+  name='hwmon', arg='4 temp 6',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=137.5, thickness=5,
+  start_angle=-27, end_angle=-1,
+  limits=temp_limits, colors=temp_colors
+ },
+ { -- core 11 temp
+  name='hwmon', arg='4 temp 7',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=137.5, thickness=5,
+  start_angle=1, end_angle=27,
+  limits=temp_limits, colors=temp_colors
+ },
+ { -- core 12 temp
+  name='hwmon', arg='4 temp 8',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=137.5, thickness=5,
+  start_angle=29, end_angle=55,
+  limits=temp_limits, colors=temp_colors
+ },
+ { -- core 13 temp
+  name='hwmon', arg='4 temp 9',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=137.5, thickness=5,
+  start_angle=57, end_angle=83,
+  limits=temp_limits, colors=temp_colors
+ },
+ { -- core 14 temp
+  name='hwmon', arg='4 temp 10',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=137.5, thickness=5,
+  start_angle=85, end_angle=111,
+  limits=temp_limits, colors=temp_colors
+ },
+ { -- core 15 temp
+  name='hwmon', arg='4 temp 11',
+  max=100,
+  bg_colour=cBackground, bg_alpha=aBackground,
+  fg_colour=cNormal, fg_alpha=aForeground,
+  x=cpu_x, y=cpu_y,
+  radius=137.5, thickness=5,
+  start_angle=113, end_angle=140,
+  limits=temp_limits, colors=temp_colors
+ },
+
+ -- memory usage
  { -- ram
   name='memperc', arg='',
   max=100,
@@ -217,8 +335,10 @@ settings_table = {
   start_angle=-107, end_angle=107,
   limits=swap_limits, colors=swap_colors
  },
- { -- ethernet download
-  name='downspeedf', arg='wlp1s0',
+
+ -- internet usage
+ { -- wifi download
+  name='downspeedf', arg='wlo1',
   max=max_downspeed,
   bg_colour=cBackground, bg_alpha=aBackground,
   fg_colour=cNormal, fg_alpha=aForeground,
@@ -227,8 +347,8 @@ settings_table = {
   start_angle=-33, end_angle=-1,
   limits=limits, colors=colors
  },
- { -- ethernet upload
-  name='upspeedf', arg='wlp1s0',
+ { -- wifi upload
+  name='upspeedf', arg='wlo1',
   max=max_upspeed,
   bg_colour=cBackground, bg_alpha=aBackground,
   fg_colour=cNormal, fg_alpha=aForeground,
@@ -244,12 +364,12 @@ function rgb_to_r_g_b(colour,alpha)
 end
 
 function color_range(fgc, value, limits, colors)
-    for i=1,table.getn(limits) do
+    for i=1,rawlen(limits) do
         if value >= limits[i] then
             return colors[i]
         end
     end
-    return colors[table.getn(colors)]
+    return colors[rawlen(colors)]
 end
 
 function draw_ring(cr,t,pt)
@@ -339,17 +459,17 @@ function conky_init_rings()
 
      write_centered(cr, 'CPU', cpu_x, cpu_y, 25)
      write_centered(cr, conky_parse('${cpu cpu0}') .. '%', cpu_x, cpu_y + 20, 15)
-     write_centered(cr, conky_parse('${hwmon 2 temp 1}') .. 'C', cpu_x, cpu_y + 40, 15)
-     write_centered(cr, conky_parse('${hwmon 2 fan 1}') .. ' RPM', cpu_x, cpu_y + 60, 15)
+     write_centered(cr, conky_parse('${hwmon 4 temp 1}') .. 'C', cpu_x, cpu_y + 40, 15)
+     -- write_centered(cr, conky_parse('${hwmon 2 fan 1}') .. ' RPM', cpu_x, cpu_y + 60, 15)
 
      write_centered(cr, 'MEM', mem_x, mem_y, 25)
      write_centered(cr, conky_parse('${memperc}') .. '%', mem_x, mem_y + 20, 15)
 
      write_centered(cr, 'DOWN', eth_x - eth_width, eth_y, 20)
-     write_centered(cr, string.format('%.1f', (8 / 1024) * conky_parse('${downspeedf wlp1s0}')) .. ' Mbps', eth_x - eth_width, eth_y + 20, 15)
+     write_centered(cr, string.format('%.1f', (8 / 1024) * conky_parse('${downspeedf wlo1}')) .. ' Mbps', eth_x - eth_width, eth_y + 20, 15)
 
      write_centered(cr, 'UP', eth_x + eth_width, eth_y, 20)
-     write_centered(cr, string.format('%.1f', (8 / 1024) * conky_parse('${upspeedf wlp1s0}')) .. ' Mbps', eth_x + eth_width, eth_y + 20, 15)
+     write_centered(cr, string.format('%.1f', (8 / 1024) * conky_parse('${upspeedf wlo1}')) .. ' Mbps', eth_x + eth_width, eth_y + 20, 15)
 
      -- stock price
      -- write_centered(cr, 'PORTFOLIO', port_x, port_y, 25)
