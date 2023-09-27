@@ -51,7 +51,7 @@
         "format-plugged": "{capacity}% \uf1e6",
         "format-full": "{capacity}% \uf240",
         "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
-        "bat": "BAT0",
+        "bat": "BAT1",
         "interval": 1
     },
     "clock#time": {
