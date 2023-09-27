@@ -17,10 +17,8 @@ set $right l
 exec xrdb -merge ~/.Xresources
 # Your preferred terminal emulator
 set $term urxvt
-# set $term foot
 # Your preferred application launcher
-# set $menu j4-dmenu-desktop --dmenu="bemenu-run -i -n" --term="urxvt"
-set $menu dmenu_path | wmenu | xargs swaymsg exec --
+set $menu j4-dmenu-desktop --dmenu="bemenu-run -i -n" --term="urxvt"
 
 ### Output configuration
 #
@@ -70,6 +68,7 @@ default_border pixel
 
 ### Input configuration
 
+# touchpad settings
 # inspiron touchpad
 input "1739:32402:DELL07EC:00_06CB:7E92_Touchpad" {
     dwt enabled
@@ -99,7 +98,7 @@ input "1578:22808:MOSART_Semi._2.4G_Keyboard_Mouse_Mouse" {
 }
 
 # disable touchscreen on startup
-exec_always sway input 1267:9477:ELAN2097:00_04F3:2505 events disabled
+exec_always sway input $($HOME/.config/sway/input_identifier touch) events disabled
 
 # start mako for dbus notifications
 exec mako
@@ -128,7 +127,9 @@ exec mako
     bindsym $mod+Shift+c reload
 
     # clear notifications
-    bindsym Ctrl+Shift+Space exec makoctl dismiss -a
+    bindsym Ctrl+Space exec makoctl dismiss -a
+    # bring back notification
+    bindsym Ctrl+Shift+Space exec makoctl restore
 
     # volume
     bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -150,9 +151,8 @@ exec mako
 	bindsym Ctrl+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy
 	bindsym Ctrl+Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
-    # enable/disable touchscreen
-    bindsym $mod+m exec sway input 1267:9477:ELAN2097:00_04F3:2505 events enabled
-    bindsym $mod+n exec sway input 1267:9477:ELAN2097:00_04F3:2505 events disabled
+    # toggle touchscreen
+    bindsym $mod+t exec sway input $($HOME/.config/sway/input_identifier touch) events toggle
 
     # steal ctrl+q from firefox so it stops quitting
     bindsym Ctrl+q exec $HOME/.config/sway/noquit
@@ -162,7 +162,7 @@ exec mako
     bindsym $mod+p default_border pixel
 
     # toggle headphones audio profile
-    bindsym $mod+t exec $HOME/utils/toggle-profile
+    bindsym $mod+n exec $HOME/.config/sway/toggle-profile
 
 
 #
@@ -173,22 +173,12 @@ exec mako
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
 #
 # Workspaces:
 #
@@ -266,17 +256,24 @@ mode "resize" {
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
-    # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
-
     # Return to default mode
-    bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
+
+# move containers
+mode "move" {
+    bindsym $left move left 10px
+    bindsym $down move down 10px
+    bindsym $up move up 10px
+    bindsym $right move right 10px
+
+    # Return to default mode
+    bindsym Escape mode "default"
+    bindsym $mod+m mode "default"
+}
+bindsym $mod+m mode "move"
 
 # Shutdown options
 mode "shutdown" {
@@ -287,6 +284,7 @@ mode "shutdown" {
     bindsym p exec $HOME/.config/sway/exit poweroff, mode "default"
     # return to default mode
     bindsym Escape mode "default"
+    bindsym $mod+i mode "default"
 }
 bindsym $mod+i mode "shutdown"
 
